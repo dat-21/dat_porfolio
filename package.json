@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node resend-server/server.js"
+  "start": "node resend-server/src/server.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
