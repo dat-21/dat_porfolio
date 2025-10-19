@@ -1,0 +1,145 @@
+/* src/index.css hoặc src/HomePage.css */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌞 Light mode mặc định */
+:root {
+  font-family: "Heebo", sans-serif;
+  scroll-behavior: smooth;
+
+  /* --- Màu nền và chữ chính --- */
+  --color-bg: #ffffff;
+  --color-bg-component: #f9fafb;
+  --color-card: #ffffff;
+  --color-text: #18181b;
+  --color-subtext: #3f3f46;
+
+  /* --- Accent (màu chủ đạo, nút, link) --- */
+  --color-accent: #b91c1c;
+  --color-accent-hover: #dc2626;
+
+  /* --- Border và hiệu ứng --- */
+  --color-border: #d4d4d8;
+  --card-hover: #f3f4f6; /* Hover card sáng */
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  /* --- Transition --- */
+  --transition-speed: 0.3s;
+}
+
+/* 🌚 Dark mode */
+html.dark {
+  --color-bg: #000000;
+  --color-bg-component: #18181b;
+  --color-card: #18181b;
+  --color-text: #f4f4f5;
+  --color-subtext: #a1a1aa;
+
+  --color-accent: #ef4444;
+  --color-accent-hover: #f87171;
+
+  --color-border: #27272a;
+  --card-hover: #27272a;
+  --shadow-soft: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+/* 🌐 Áp dụng toàn cục */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+  overflow-x: hidden;
+}
+
+/* 📦 Card, Section, Button... sử dụng biến chung */
+.card {
+  background-color: var(--color-card);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  transition: all var(--transition-speed) ease;
+}
+
+a {
+  color: var(--color-accent);
+  transition: color var(--transition-speed) ease;
+}
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* 🧭 Section spacing chuẩn */
+section {
+  scroll-margin-top: 80px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: all var(--transition-speed) ease;
+}
+
+/* ✨ HERO FIX — Đảm bảo Hero không bị đè màu khi đổi theme */
+.hero {
+  position: relative;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: all var(--transition-speed) ease;
+}
+
+.hero::before {
+  /* Nếu Hero có overlay mờ, ta điều chỉnh theo theme */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity var(--transition-speed) ease;
+}
+
+html.dark .hero::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.2)
+  );
+  opacity: 0.4;
+}
+
+/* 🖼️ Ảnh nền Hero (nếu có) */
+.hero img,
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter var(--transition-speed) ease;
+}
+
+html.dark .hero img,
+html.dark .hero-bg {
+  filter: brightness(0.85);
+}
+
+/* 🎨 Thanh cuộn */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-hover);
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+/* 🌓 Transition mượt cho toàn site khi đổi theme */
+* {
+  transition: background-color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    color var(--transition-speed) ease, filter var(--transition-speed) ease;
+}

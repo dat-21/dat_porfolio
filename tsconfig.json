@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    // ⚡ Cho phép JSX (cần cho React)
+    "jsx": "react-jsx",
+
+    // ⚡ Cho phép import file ảnh, JSON, v.v.
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+
+    // ⚡ Giúp TS hiểu type của Node (nếu bạn dùng fs, path, ... trong server)
+    "types": ["node"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
