@@ -1,4 +1,4 @@
-import { BASE_URL } from "../config/apiConfig";
+import { BASE_URL } from "../config/apiConfig.js";
 
 
 export const sendEmail = async (formData: {

@@ -2,23 +2,19 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
+    "moduleResolution": "node",
+
     "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./src/types", "./node_modules/@types"],
-    // ⚡ Cho phép JSX (cần cho React)
     "jsx": "react-jsx",
-
-    // ⚡ Cho phép import file ảnh, JSON, v.v.
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-
-    // ⚡ Giúp TS hiểu type của Node (nếu bạn dùng fs, path, ... trong server)
-    "types": ["node"]
+    "types": ["node"],
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]
