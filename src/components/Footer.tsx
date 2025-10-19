@@ -1,5 +1,5 @@
 import { FaArrowCircleUp } from "react-icons/fa";
-import user_info from "../data/userdata.ts";
+import user_info from "../data/userdata";
 import GitHubButton from "react-github-btn";
 interface FooterProps {
   theme: string; // 👈 vì theme là chuỗi (vd: 'light' | 'dark')
