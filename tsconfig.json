@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
-    "moduleResolution": "node",
-
+    "target": "ES2020", // Updated to support import.meta
+    "module": "esnext", // Updated to support import.meta and Vite
     "rootDir": "./src",
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
+    "moduleResolution": "bundler", // ✅ QUAN TRỌNG: Thay đổi từ "classic"
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    // ⚡ Cho phép JSX (cần cho React)
     "jsx": "react-jsx",
+    // ⚡ Cho phép import file ảnh, JSON, v.v.
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node"],
-    "typeRoots": ["./src/types", "./node_modules/@types"]
+    // ⚡ Giúp TS hiểu type của Node và Vite
+    "types": ["node", "vite/client"] // Added vite/client for Vite env types
   },
   "include": ["src"],
   "exclude": ["node_modules"]
