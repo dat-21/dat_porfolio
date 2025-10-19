@@ -1,6 +1,9 @@
 import { CgDarkMode } from "react-icons/cg";
+interface ToggleThemeProps {
+  switchTheme: () => void;
+}
 
-function ToggleTheme({ switchTheme }) {
+const ToggleTheme: React.FC<ToggleThemeProps> = ({ switchTheme }) => {
     return (
         <div className="relative">
             <div className="hs-tooltip [--placement:bottom] inline-block">
