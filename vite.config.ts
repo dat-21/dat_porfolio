@@ -7,4 +7,10 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
+    preview: {
+    allowedHosts: ["dat-porfolio-web.onrender.com"], // 👈 thêm dòng này
+  },
+  server: {
+    allowedHosts: ["dat-porfolio-web.onrender.com"], // 👈 thêm dòng này cho môi trường dev
+  },
 })
