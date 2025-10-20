@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { Resend } from "resend";
 import { fileURLToPath } from "url";
 import path from "path";
+import cors from "cors";
 
 dotenv.config();
 const app = express();

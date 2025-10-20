@@ -13,9 +13,9 @@
     "jsx": "react-jsx",
     // ⚡ Cho phép import file ảnh, JSON, v.v.
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
     // ⚡ Giúp TS hiểu type của Node và Vite
-    // "types": ["node", "vite/client"] // Added vite/client for Vite env types
+    "types": ["node", "vite/client"] // Added vite/client for Vite env types
   },
   "include": ["src"],
   "exclude": ["node_modules"]
