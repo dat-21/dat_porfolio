@@ -74,7 +74,7 @@ app.post("/send-email", async (req, res) => {
 // =======================
 // 🌐 SERVE FRONTEND (React build)
 // =======================
-const frontendPath = path.join(__dirname, "../dist"); // ✅ fix đường dẫn
+const frontendPath = path.join(__dirname, "../../dist");
 app.use(express.static(frontendPath));
 
 app.get("*", (req, res) => {
