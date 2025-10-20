@@ -9,12 +9,22 @@ dotenv.config();
 const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Đường dẫn tuyệt đối (cho deploy)
+// Absolute path
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Middleware
-app.use(cors());
+// ✅ Cấu hình CORS chính xác cho domain frontend
+app.use(
+  cors({
+    origin: [
+      "https://dat-porfolio-web.onrender.com", // FE Render
+      "http://localhost:5173", // Cho local dev (tùy chọn)
+    ],
+    methods: ["GET", "POST"],
+    credentials: false,
+  })
+);
+
 app.use(express.json());
 
 // =======================
@@ -25,8 +35,8 @@ app.post("/send-email", async (req, res) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>", // 🟢 Địa chỉ gửi mặc định của Resend
-      to: ["tiendatyyy2005@gmail.com"], // 🟢 Thay bằng email đã verify trên Resend dashboard
+      from: "Portfolio Contact <onboarding@resend.dev>",
+      to: ["tiendatyyy2005@gmail.com"],
       subject: subject || "Portfolio Contact Message",
       html: `
         <h2>Bạn có tin nhắn mới từ Portfolio 💌</h2>
@@ -64,8 +74,7 @@ app.post("/send-email", async (req, res) => {
 // =======================
 // 🌐 SERVE FRONTEND (React build)
 // =======================
-
-const frontendPath = path.join(__dirname, "../../dist");
+const frontendPath = path.join(__dirname, "../dist"); // ✅ fix đường dẫn
 app.use(express.static(frontendPath));
 
 app.get("*", (req, res) => {
