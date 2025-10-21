@@ -17,7 +17,7 @@ function Footer({ theme }: FooterProps) {
     <footer className="p-4 text-center md:flex justify-between">
       <GitHubButton
         className="self-center"
-        href="https://github.com/dsbalico/dsfolio"
+        href="https://github.com/dat-21/dat_porfolio"
         data-color-scheme={theme}
         data-icon="octicon-star"
         data-size="large"
