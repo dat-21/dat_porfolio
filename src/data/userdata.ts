@@ -4,7 +4,7 @@ const info = {
         name: "Mai Nguyen Tien Dat",
         description: "Tôi là một lập trình viên phần mềm với niềm đam mê phát triển ứng dụng web hiện đại. Tôi có kinh nghiệm xây dựng các hệ thống web theo mô hình MVC, đặc biệt với JSP - Servlet - JDBC và SQL Server. Tôi luôn nỗ lực học hỏi công nghệ mới, phát triển kỹ năng lập trình và tạo ra các sản phẩm chất lượng, dễ mở rộng và bảo trì.",
         role: "Full-Stack Developer (Web)",
-        photo: "../../public/dat_img.jpg",
+        photo: "/dat_img.jpg",
         email: "tiendatyyy2005@gmail.com",
     },
 
