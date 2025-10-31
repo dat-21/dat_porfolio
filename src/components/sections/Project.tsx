@@ -2,19 +2,30 @@ import user_info from "../../data/userdata";
 import Project from "../Project.jsx";
 
 function Projects() {
+  const projects = user_info.projects;
+  const projectCount = projects.length;
+
+  // Xác định số cột linh hoạt
+  const gridCols =
+    projectCount === 1
+      ? "grid-cols-1"
+      : projectCount === 2
+        ? "sm:grid-cols-2"
+        : "sm:grid-cols-2 lg:grid-cols-3";
+
   return (
     <section
       id="projects"
-      className="
-       grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+      className={`
+        grid ${gridCols}
         gap-8 md:gap-12 lg:px-16 
         py-16 
         bg-[var(--color-bg)] 
         text-[var(--color-text)] 
         transition-colors duration-300
-      "
+      `}
     >
-      {user_info.projects.map((project, index) => (
+      {projects.map((project, index) => (
         <div
           key={index}
           className="
