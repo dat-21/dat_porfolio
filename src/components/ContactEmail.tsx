@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { FormEvent, useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import type { AppContextType } from "../types/AppContext";
 import imageOverlayLight from "/earth.png";
@@ -6,7 +6,7 @@ import imageOverlayDark from "/earth-dark.png";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { sendEmail } from "../services/emailService";
 
-const ContactEmail: React.FC = () => {
+const ContactEmail = () => {
   const { theme } = useContext<AppContextType>(AppContext);
   const backgroundImage = theme === "dark" ? imageOverlayDark : imageOverlayLight;
 
@@ -23,7 +23,7 @@ const ContactEmail: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("Sending...");
 
@@ -112,7 +112,7 @@ const ContactEmail: React.FC = () => {
           </div>
 
           {/* Thông tin liên hệ */}
-          <div className="self-center">
+          <div className="self-center" style={{ textShadow: "5px" }}>
             <h3 className="text-2xl font-bold mb-6 text-[var(--color-text)]">Get in Touch</h3>
             <p className="text-[var(--color-text-secondary)] leading-7 mb-6">
               Whether you want to get in touch, discuss a collaboration, or just say hi — I'd love to hear from you!

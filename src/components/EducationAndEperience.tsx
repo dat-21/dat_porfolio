@@ -62,7 +62,7 @@ interface UserInfo {
   footer: string;
 }
 
-const EducationAndExperience: React.FC = () => {
+const EducationAndExperience = () => {
   // Sử dụng user_info làm info
   const info = user_info as UserInfo;
 
@@ -75,10 +75,10 @@ const EducationAndExperience: React.FC = () => {
         text-[var(--color-text)] 
         transition-all duration-[var(--transition-speed)]
       "
-       style={{
+      style={{
         backgroundColor: "var(--color-bg)",
         color: "var(--color-text)",
-  }}
+      }}
     >
       {/* =========== EDUCATION =========== */}
       <div className="w-full md:w-[80%]">

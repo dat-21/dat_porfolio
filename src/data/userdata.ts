@@ -26,6 +26,13 @@ const info = {
         github: "https://github.com/SWPGr/fe-jobfinder",
         link: "#"
         },
+         {
+        title: "Portfolio Website",
+        description: "Trang web Portfolio cá nhân được tôi thiết kế và phát triển nhằm giới thiệu bản thân, kỹ năng, dự án và quá trình học tập, làm việc. Giao diện được tối ưu hiện đại, thân thiện với người dùng và có khả năng mở rộng dễ dàng. Dự án không chỉ là sản phẩm cá nhân mà còn là một phần quan trọng trong hành trình học lập trình front-end và xây dựng thương hiệu cá nhân trực tuyến.",
+        technologies: "ReactJS, TypeScript, Vite, Tailwind CSS, Framer Motion, GitHub Pages / Render",
+        github: "https://github.com/dat-21/dat_porfolio",
+        link: "https://dat-portfolio.onrender.com"
+    },
         // {
         //     title: "Warehouse Management System",
         //     description: "Ứng dụng quản lý kho hàng cho phép theo dõi hàng tồn kho, kiểm tra và thống kê hàng hóa.",

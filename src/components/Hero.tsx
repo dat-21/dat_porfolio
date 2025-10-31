@@ -8,11 +8,11 @@ interface UserInfo {
     name: string;
     role: string;
     description: string;
-    photo: string; 
+    photo: string;
   };
 }
 
-const Hero: React.FC = () => {
+const Hero = () => {
   // Ép kiểu user_info sang UserInfo
   const info = user_info as UserInfo;
 
@@ -23,9 +23,9 @@ const Hero: React.FC = () => {
     >
       <div className="self-center w-full"
         style={{
-        backgroundColor: "var(--color-bg)",
-        color: "var(--color-text)", 
-  }}>
+          backgroundColor: "var(--color-bg)",
+          color: "var(--color-text)",
+        }}>
         {/* Ảnh & tooltip */}
         <div className="hs-tooltip [--placement:right] w-20 hs-tooltip-toggle relative">
           <img
