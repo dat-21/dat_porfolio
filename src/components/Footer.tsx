@@ -33,9 +33,9 @@ function Footer({ theme }: FooterProps) {
 
       <button
         onClick={scrollToTop}
-        className="text-zinc-600 self-center mt-2 md:mt-0 dark:text-zinc-300 mx-auto md:mx-0 text-sm font-light flex gap-2"
+        className="text-zinc-600 self-center mt-2 md:mt-0 dark:text-zinc-300 mx-auto md:mx-0 text-sm font-light flex gap-2 cursor-pointer"
       >
-        <FaArrowCircleUp className="self-center text-red-800 dark:text-red-500" /> Go back to top
+        <FaArrowCircleUp className="self-center text-red-800 dark:text-red-500 cursor-pointers" /> Go back to top
       </button>
     </footer>
   );
